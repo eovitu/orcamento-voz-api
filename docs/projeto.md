@@ -1,0 +1,5 @@
+# API de orçamento por voz
+Requisitos da DIO: Spring Boot, Spring AI, ChatClient, tool calling, transcrição, síntese de voz, persistência e REST.
+Implementação: Java 21, Spring Boot 3.5.16, Spring AI 1.1.8, H2 em arquivo para execução local. API limitada a localhost e dados fictícios. Entradas validadas, áudio limitado a 10 MB, sem registro de corpos ou chaves. A IA consulta saldo e transações por tools somente de leitura. Criação de lançamentos ocorre via REST explícito, evitando alterações financeiras por interpretação do modelo.
+Plano: (1) domínio e persistência com testes; (2) interfaces de áudio/IA e controllers com testes de validação e orquestração; (3) adaptador Spring AI real, compilação e testes com modelos simulados; (4) README, CI e publicação com autoria eovitu; (5) preencher entrega DIO e deixar aceite de termos para usuário.
+Verificação externa real depende de chave e serviços pagos: não usar credenciais ou dados reais neste trabalho. Diferenciar integração implementada de integração remota testada. Sem Docker obrigatório; H2 demonstra persistência local. Não expor essa API como serviço público sem autenticação e isolamento por pessoa.
